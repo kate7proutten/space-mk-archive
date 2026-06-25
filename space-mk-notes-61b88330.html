@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mk体育 · 知识库入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f3f4f6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1f2937;
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+        }
+
+        .wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* hero */
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.5rem 2rem 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #e5e7eb;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 1.9rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #111827;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #6b7280;
+            border-left: 3px solid #9ca3af;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 0.97rem;
+            color: #374151;
+            max-width: 80%;
+        }
+
+        /* 目录感卡片网格 */
+        .section-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #9ca3af;
+            margin: 2rem 0 0.8rem 0;
+            border-bottom: 1px solid #d1d5db;
+            padding-bottom: 0.3rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 2.2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.5rem 1.4rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid #e5e7eb;
+            transition: box-shadow 0.15s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1f2937;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+        }
+
+        .card p, .card li {
+            font-size: 0.92rem;
+            color: #4b5563;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            padding: 0.2rem 0;
+            position: relative;
+            padding-left: 1.1rem;
+        }
+
+        .card ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #9ca3af;
+            font-weight: 700;
+        }
+
+        .inline-link {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px solid #bfdbfe;
+            transition: border-color 0.1s;
+        }
+
+        .inline-link:hover {
+            border-bottom-color: #2563eb;
+        }
+
+        /* 提示区 + 相关信息混合卡片 */
+        .info-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-row .card {
+            flex: 1 1 220px;
+        }
+
+        .info-row .card:first-child {
+            flex: 2 1 300px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f3f4f6;
+            color: #4b5563;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 30px;
+            border: 1px solid #e5e7eb;
+            margin-top: 0.6rem;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            border-top: 1px solid #d1d5db;
+            padding-top: 1.5rem;
+            margin-top: 1.2rem;
+            text-align: center;
+        }
+
+        .footer-note a {
+            color: #6b7280;
+            text-decoration: none;
+            border-bottom: 1px solid #d1d5db;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #6b7280;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1.2rem 1rem; }
+            .hero h1 { font-size: 1.5rem; }
+            .hero p { max-width: 100%; }
+            .card-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+
+    <!-- hero：快速识别用途 -->
+    <div class="hero">
+        <h1>mk体育 · 知识库入口</h1>
+        <div class="sub">结构化的信息导航 · 面向运动与赛事</div>
+        <p>
+            这个站点围绕「mk体育」整理了一系列可查阅的内容。如果你希望快速了解某一类运动背景、赛制要点或相关数据，这里更像一个安静的文档架，而不是资讯流。
+        </p>
+    </div>
+
+    <!-- 目录感卡片：可检索的知识分区 -->
+    <div class="section-label">📋 内容目录</div>
+    <div class="card-grid">
+        <div class="card">
+            <h3>运动项目</h3>
+            <ul>
+                <li>足球 · 联赛与杯赛结构</li>
+                <li>篮球 · FIBA 与 NBA 规则差异</li>
+                <li>网球 · 大满贯场地特性</li>
+                <li>田径 · 主要纪录与分段标准</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>赛事解读</h3>
+            <ul>
+                <li>赛程编排与种子逻辑</li>
+                <li>积分体系与晋级路径</li>
+                <li>历史经典对阵回顾</li>
+                <li>判罚规则变更记录</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>术语 · 数据</h3>
+            <ul>
+                <li>常用技术统计缩写</li>
+                <li>场地与装备规格</li>
+                <li>运动员等级与注册</li>
+                <li>赛事类别代码</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>参考资料</h3>
+            <ul>
+                <li>国际联合会章程摘要</li>
+                <li>反兴奋剂条例简版</li>
+                <li>运动医学基础指南</li>
+                <li>赛事组织者手册</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 混合信息区：说明+提示+相关 -->
+    <div class="info-row">
+        <div class="card">
+            <h3>说明</h3>
+            <p>这个知识库将分散的运动信息按逻辑归拢。每一条目都保留了来源或参考依据，便于核查。你可以在<a href="https://space-mk.com.cn" class="inline-link">mk体育</a>中浏览完整内容，这里只呈现经过整理的知识节点。</p>
+            <span class="tag">结构优先</span>
+            <span class="tag">非实时数据</span>
+        </div>
+        <div class="card">
+            <h3>提示</h3>
+            <p>页面中链接指向的<a href="https://space-mk.com.cn" class="inline-link">mk体育</a>包含更完整的分类与搜索。本入口页作为静态概览，适合初次接触时建立框架感。</p>
+            <span class="tag">建议桌面端浏览</span>
+        </div>
+        <div class="card">
+            <h3>相关信息</h3>
+            <p>内容覆盖团队运动、个人项目及综合赛事。部分条目附有简短的 FAQ 摘要，例如「越位规则修订历史」「马拉松配速策略」等，可在主站查找。</p>
+            <span class="tag">持续补充中</span>
+        </div>
+    </div>
+
+    <!-- 可折叠的 FAQ 摘要（静态卡片风格） -->
+    <div class="section-label">❓ 常见疑问摘要</div>
+    <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+        <div class="card">
+            <h3>如何查找最新赛程？</h3>
+            <p>知识库提供赛制框架，具体日期建议参考<a href="https://space-mk.com.cn" class="inline-link">mk体育</a>对应赛事页面。</p>
+        </div>
+        <div class="card">
+            <h3>数据更新频率</h3>
+            <p>基础知识条目按赛季或规则版本更新，非实时推送。变动会在页面标记版本号。</p>
+        </div>
+        <div class="card">
+            <h3>是否可以引用？</h3>
+            <p>建议直接引用主站原文链接。知识库内容可作为上下文参考，不作唯一依据。</p>
+        </div>
+        <div class="card">
+            <h3>移动端适配</h3>
+            <p>卡片布局已做响应式调整，但复杂表格建议在宽屏下查看。</p>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <a href="https://space-mk.com.cn">mk体育</a> · 知识库入口 · 内容仅供学习与参考
+    </div>
+
+</div>
+</body>
+</html>
